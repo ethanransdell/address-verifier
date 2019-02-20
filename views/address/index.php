@@ -24,12 +24,7 @@
             <tr>
                 <th scope="col">ID</th>
                 <th scope="col">Recipient</th>
-                <th scope="col">Address 1</th>
-                <th scope="col">Address 2</th>
-                <th scope="col">City</th>
-                <th scope="col">State</th>
-                <th scope="col">Zip5</th>
-                <th scope="col">Zip4</th>
+                <th scope="col">Address</th>
             </tr>
             </thead>
             <tbody>
@@ -37,12 +32,13 @@
                 <tr class="table-primary">
                     <th scope="row"><?php echo $address->id; ?></th>
                     <td><?php echo $address->recipient; ?></td>
-                    <td><?php echo $address->address1 ?></td>
-                    <td><?php echo $address->address2 ?></td>
-                    <td><?php echo $address->city; ?></td>
-                    <td><?php echo $address->state; ?></td>
-                    <td><?php echo $address->zip5; ?></td>
-                    <td><?php echo $address->zip4; ?></td>
+                    <td>
+                        <?php echo $address->address1; ?>
+                        <?php if (!empty($address->address2)) {
+                            echo '<br>' . $address->address2;
+                        } ?>
+                        <br><?php echo $address->city . ', ' . $address->state . ' ' . $address->zip5 . (!empty($address->zip4) ? '-' . $address->zip4 : ''); ?>
+                    </td>
                 </tr>
             <?php } ?>
             </tbody>

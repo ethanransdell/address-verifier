@@ -20,42 +20,39 @@
                            value="<?php echo isset($address) ? $address->recipient : '' ?>" required autofocus>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group col-md-6 col-sm-12">
                         <label for="address1">Address 1</label>
                         <input type="text" class="form-control" name="address1" maxlength="255"
                                value="<?php echo isset($address) ? $address->address1 : '' ?>" required>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-6 col-sm-12">
                         <label for="address2">Address 2</label>
                         <input type="text" class="form-control" name="address2" maxlength="255" placeholder="(optional)"
                                value="<?php echo isset($address) ? $address->address2 : '' ?>">
                     </div>
                 </div>
                 <div class="form-row">
-                    <div class="form-group col">
+                    <div class="form-group col-md-3 col-sm-6">
                         <label for="city">City</label>
                         <input type="text" class="form-control" name="city" maxlength="50"
                                value="<?php echo isset($address) ? $address->city : '' ?>" required>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-3 col-sm-6">
                         <label for="state">State</label>
                         <select class="form-control" name="state" required>
                             <option value="" disabled selected>Choose</option>
-                            <option value="AK" <?php echo isset($address) && $address->state === 'AK' ? 'selected' : '' ?>>
-                                AK
-                            </option>
                             <?php foreach ($states as $state) { ?>
                                 <option value="<?php echo $state; ?>" <?php echo isset($address) && $address->state === $state ? 'selected' : '' ?>><?php echo $state; ?></option>
                             <?php } ?>
                         </select>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-3 col-sm-6">
                         <label for="zip5">Zip5</label>
                         <input type="text" class="form-control" name="zip5" pattern="\d{5}" minlength="5" maxlength="5"
                                value="<?php echo isset($address) ? $address->zip5 : '' ?>"
                                required>
                     </div>
-                    <div class="form-group col">
+                    <div class="form-group col-md-3 col-sm-6">
                         <label for="zip4">Zip4</label>
                         <input type="text" class="form-control" name="zip4" patterm="\d{4}" minlength="4" maxlength="4"
                                placeholder="(optional)" value="<?php echo isset($address) ? $address->zip4 : '' ?>">
